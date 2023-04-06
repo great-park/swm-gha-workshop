@@ -34,3 +34,9 @@ jobs: # 각 job당 독립된 서버 안에서 동작 - 공유 x
         echo "Output value 1 is: ${{ steps.first.outputs.swm1 }}"
         echo "Output value 2 is: ${{ steps.first.outputs.swm2 }}"
       
+    - name: Get Secret value
+      shell: bash
+
+      # 레포에 저장된 secret 값 참조 - secrets.MY_SECRET
+      run: |
+        echo "MY_SECRET value is: ${{ secrets.MY_SECRET }}"
