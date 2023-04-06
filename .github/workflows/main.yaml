@@ -22,7 +22,7 @@ jobs: # 각 job당 독립된 서버 안에서 동작 - 공유 x
         swm_value_1="This is the value for the first output"
         swm_value_2="This is the value for the second output"
 
-        echo "::add-mask::$swm1"
+        echo "::add-mask::$swm_value1"
         echo "swm1=$swm_value_1" >> $GITHUB_OUTPUT
         echo "swm2=$swm_value_2" >> $GITHUB_OUTPUT
 
