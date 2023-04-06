@@ -1,0 +1,21 @@
+name: 'SWM GitHub Actions Basic' # (선택) 구분용, 외부에서 api 호출용
+
+on: push # 트리거 - ex) ['push', 'pull_request']
+
+# 계층 구조임
+jobs: # 각 job당 독립된 서버 안에서 동작 - 공유 x
+  first-job: 
+    name: 'First Job'
+
+    runs-on: ubuntu-latest
+
+    steps: # 동작 단위 - 순차 실행 / 설정에 따라서 실패 구간을 넘기고 다음 동작을 실행할 수 있음
+    - name: Say Hello World 1 # (선택) 미지정시 default 사용
+      shell: bash # (선택)
+      run: | # multi-line 
+        echo "Hello World from step 1"
+
+    - name: Say Hello World 2
+      shell: pwsh
+      run: |
+        echo "Hello World from step 2"
